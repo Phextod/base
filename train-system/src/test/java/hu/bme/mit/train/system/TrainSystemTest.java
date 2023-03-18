@@ -50,5 +50,19 @@ public class TrainSystemTest {
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 	}
 
+	@Test
+	public void TestStopAfter60Updates() {
+		user.overrideJoystickPosition(1);
+		controller.followSpeed();
+		user.overrideJoystickPosition(0);
+		controller.followSpeed();
+		Assert.assertEquals(1, controller.getReferenceSpeed());
+		for(int i = 0;i<59;i++)
+			controller.followSpeed();
+		Assert.assertEquals(1, controller.getReferenceSpeed());
+		controller.followSpeed();
+		Assert.assertEquals(0, controller.getReferenceSpeed());
+	}
+
 	
 }

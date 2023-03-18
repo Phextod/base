@@ -67,5 +67,9 @@ The figure below illustrates this behavior using an example.
 * testing *italic*
 * testing **bold**
 
+
 conflich branch-A
+
+
+conflict in branch-B
 
